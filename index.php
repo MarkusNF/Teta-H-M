@@ -13,9 +13,14 @@
 
 <body>
 	<h1>Outfitmaker</h1>
-	<div id="content" style="height: 400px;">
-  		<div id="makeMeDraggable"> </div>
+	<div id="clothes">
+		<img src="img/minion1.png">
+		<img src="img/bowser.png">
+		<img src="img/star.png">
+		<img src="img/svamp.png">
+		<img src="img/minion2.png">
 	</div>
+	<div id="bed"></div>
 	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>

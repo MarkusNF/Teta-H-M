@@ -1,12 +1,17 @@
 $(document).ready(function(){
- init();
+ 	imgDrag();
 
 });
  
-function init() {
-	$('#makeMeDraggable').draggable( {
-		containment: '#content',
-		cursor: 'move',
-		snap: '#content'
+function imgDrag() {
+	$('img').draggable( {
+		containment: '#bed',
+		cursor: 'move'
+		//snap: '#content'
 		});
 }
+
+// function imgDrop( event, ui ) {
+//   var slotNumber = $(this).data( 'number' );
+//   var cardNumber = ui.draggable.data( 'number' );
+// }
