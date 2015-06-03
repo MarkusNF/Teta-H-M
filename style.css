@@ -1,11 +1,20 @@
 #bed {
-	width: 100%;
+	width: 400px;
 	height: 400px;
-	margin: auto;
 	border: solid black;
 }
 
 img {
 	width:100px;
 	height:100px;
+
+}
+
+.bin {
+	background: url(img/bin.png) no-repeat;
+	background-size:cover;
+	width: 50px;
+	height:50px;
+	margin-top:345px;
+	margin-left:345px;
 }
