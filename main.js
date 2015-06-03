@@ -10,20 +10,9 @@ function imgDrag() {
 		//snap: '#content'
 	});
 
-	$('.bin').droppable({
-		drop: handleDropEvent
-	});
+	 $('.bin').droppable({
+        drop: function(event, ui) {
+            ui.draggable.remove();
+        }
+    });
 }
-
-function handleDropEvent( event, ui ) {
-  	var draggable = ui.draggable;
-  	//$(this).find('img').remove();
-
-
-  	alert( 'The square with ID "' + draggable.attr('id') + '" was dropped onto me!' );
-}
-
-// function imgDrop( event, ui ) {
-//   var slotNumber = $(this).data( 'number' );
-//   var cardNumber = ui.draggable.data( 'number' );
-// }
