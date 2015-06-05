@@ -1,20 +1,35 @@
+.clearfix {
+	clear: both;
+}
+
 #bed {
 	width: 400px;
 	height: 400px;
 	border: solid black;
+	float: left;
 }
 
-img {
-	width:100px;
-	height:100px;
-
+img.pic {
+	width: 100px;
+	height: 100px;
+	z-index: 3;
 }
 
-.bin {
-	background: url(img/bin.png) no-repeat;
-	background-size:cover;
-	width: 50px;
-	height:50px;
-	margin-top:345px;
-	margin-left:345px;
+#bin {
+	background: url(img/laundryBasket.png) no-repeat;
+	background-size: cover;
+	width: 250px;
+	height: 150px;
+	margin-top: 250px;
+	margin-left: 0px;
+	position: relative;
+	z-index: 3;
+	float: left;
+}
+
+.board {
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	z-index: 0;
 }
