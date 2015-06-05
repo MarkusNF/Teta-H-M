@@ -1,3 +1,15 @@
+#wrapper {
+	  text-align: left;
+	  width: 720px;
+	  margin-left: auto;
+	  margin-right: auto;
+}
+
+#clothes{
+	height:100px;
+}
+
+
 .clearfix {
 	clear: both;
 }
@@ -9,11 +21,11 @@
 	float: left;
 }
 
-img.pic {
+.pic {
 	width: 100px;
 	height: 100px;
-	z-index: 3;
 }
+
 
 #bin {
 	background: url(img/laundryBasket.png) no-repeat;
@@ -22,8 +34,8 @@ img.pic {
 	height: 150px;
 	margin-top: 250px;
 	margin-left: 0px;
-	position: relative;
-	z-index: 3;
+	position: fixed;
+	z-index: 4;
 	float: left;
 }
 
@@ -32,4 +44,101 @@ img.pic {
 	height: 400px;
 	position: absolute;
 	z-index: 0;
+}
+
+
+
+#drag1, #drag2, #drag3, #drag4, #drag5 {
+	float:left;
+}
+
+#drag1, #drag2, #drag3, #drag4, #drag5, .dragged1, .dragged2, .dragged3, .dragged4, .dragged5 {
+	width:100px;
+	height:100px;
+	background-size: cover;
+}
+
+#drag1 {
+	background-image: url("img/star.png");
+}
+
+#drag2 {
+	background-image: url("img/minion1.png");
+}
+
+#drag3 {
+	background-image: url("img/bowser.png");
+}
+
+#drag4 {
+	background-image: url("img/svamp.png");
+}
+
+#drag5 {
+	background-image: url("img/minion2.png");
+}
+
+
+.ui-draggable-helperMoving {
+	border: 1px dotted #000;
+	padding: 6px;
+	background: #fff;
+	font-size: 1.2em;
+	width:100px;
+	height:100px;
+}
+
+.ui-draggable-helperStoped {
+	border: 1px solid #000;
+	width:5px;
+	height:5px;
+}
+
+.ui-draggable-dragging {
+	width: 100px;
+	height: 100px;
+	z-index: 5;
+	/*background-color: red;*/
+}
+
+
+
+/* classes for dragged stuff */
+.dragged1, .dragged2, .dragged3, .dragged4, .dragged5 {
+	position:absolute; 
+}
+
+.dragged1 {
+	
+	background-image: url("img/star.png");
+
+}
+
+.dragged2 {
+
+	background-image: url("img/minion1.png");
+
+}
+
+.dragged3 {
+	
+	background-image: url("img/bowser.png");
+
+}
+
+.dragged4 {
+
+	background-image: url("img/svamp.png");
+
+}
+
+.dragged5 {
+
+	background-image: url("img/minion2.png");
+
+}
+
+
+#element{
+	border:1px solid red
 }
