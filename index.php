@@ -14,11 +14,11 @@
 <body>
 	<h1>Outfitmaker</h1>
 	<div id="clothes">
-		<img src="img/minion1.png">
-		<img src="img/bowser.png">
-		<img src="img/star.png">
-		<img src="img/svamp.png">
-		<img src="img/minion2.png">
+		<img class="pic" src="img/minion1.png">
+		<img class="pic" src="img/bowser.png">
+		<img class="pic" src="img/star.png">
+		<img class="pic" src="img/svamp.png">
+		<img class="pic" src="img/minion2.png">
 	</div>
 	<div id="bed"></div>
 	<div id="bin"></div>
