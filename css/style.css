@@ -76,11 +76,11 @@
 	display: inline-block;
 	height: 38px;
 	padding: 0 10px;
-	font-weight: normal;
+	font-weight: 700;
 	font-size: 90%;
 }
 
-/* ---------------------------------------------------------- */
+/* -------------------- WRAPPER ------------------------ */
 #wrapper {
 	text-align: left;
 	width: 972px;
@@ -88,10 +88,11 @@
 	margin-right: auto;
 }
 
+/* -------------------- SLIDER ------------------------ */
 #clothes{
 	height:100px;
+	margin-top: 100px;
 }
-
 
 .clearfix {
 	clear: both;
@@ -117,7 +118,7 @@
 	height: 150px;
 	margin-top: 250px;
 	margin-left: 0px;
-	position: fixed;
+	position: absolute;
 	z-index: 4;
 	float: left;
 }
