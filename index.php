@@ -51,6 +51,8 @@
 			<option value="summer">Summer</option>
 			<option value="beach">Beach</option>
 		</select>
+		
+		<div class="bottums"></div>
 
 		<div id="sidebar">
 			<div class="tips"></div>
