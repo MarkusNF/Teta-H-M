@@ -8,39 +8,44 @@
 </head>
 
 <body>
+	<div id="header">
+		<div id="bar">
+			<ul>
+				<li>Kassa</li>
+				<li>Shoppingbag</li>
+				<li>Sverige | SEK</li>
+				<li>Mitt H&M</li>
+				<li>Logga in</li>
+			</ul>
+		</div>
+
+		<div id="menu">
+			<a href="http://www.hm.com/se/"><img src="img/HM_logo.png" alt="HM logga"></a>
+			<ul>
+				<li>Överdelar</li>
+				<li>Underdelar</li>
+				<li>Klänningar</li>
+				<li>Skor</li>
+				<li>Accesories</li>
+			</ul>
+		</div>
+	</div><!-- #header -->
+	<h1>Outfitmaker</h1>
+
+	<div id="clothes">
+		<img class='back' src="img/curtainrod.png"/>
+		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag1" class='shirt' src="img/byxor.png"></div>
+		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag2" class='shirt' src="img/shirt.png"></div>
+		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag3" class='shirt' src="img/shirt.png"></div>
+		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag4" class='shirt' src="img/shirt.png"></div>
+		<div class='cover active'><img class='hanger' src="img/hanger.png"></br><img id="drag5" class='shirt' src="img/shirt.png"></div>
+		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag6" class='shirt' src="img/byxor.png"></div>
+		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag7" class='shirt' src="img/shirt.png"></div>
+		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag8" class='shirt' src="img/shirt.png"></div>
+		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag9" class='shirt' src="img/shirt.png"></div>
+	</div> <!-- end of options -->
+	
 	<div id="wrapper">
-		<div id="header">
-			<div id="bar">
-				<ul>
-					<li>Kassa</li>
-					<li>Shoppingbag</li>
-					<li>Sverige | SEK</li>
-					<li>Mitt H&M</li>
-					<li>Logga in</li>
-				</ul>
-			</div>
-
-			<div id="menu">
-				<a href="http://www.hm.com/se/"><img src="img/HM_logo.png" alt="HM logga"></a>
-				<ul>
-					<li>Överdelar</li>
-					<li>Underdelar</li>
-					<li>Klänningar</li>
-					<li>Skor</li>
-					<li>Accesories</li>
-				</ul>
-			</div>
-		</div><!-- #header -->
-		<h1>Outfitmaker</h1>
-
-		<div id="clothes">
-			<div id="drag1" class="pic"></div> 
-			<div id="drag2" class="pic"></div> 
-			<div id="drag3" class="pic"></div> 
-			<div id="drag4" class="pic"></div> 
-			<div id="drag5" class="pic"></div> 
-		</div> <!-- end of options -->
-
 		<div id="bed"></div>
 		<div id="bin"></div>
 
