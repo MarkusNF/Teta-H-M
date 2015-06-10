@@ -1,3 +1,12 @@
+*, *:after, *:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.clearfix {
+	clear: both;
+}
 /* ----------------------- HEADER -------------------------- */
 #header {
 	position: absolute;
@@ -84,18 +93,20 @@
 /* -------------------- WRAPPER ------------------------ */
 #wrapper {
 	width: 972px;
+	height: auto;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 /* -------------------- SLIDER ------------------------ */
 #clothes{
+	width: 972px;
 	height:150px;
 	margin-top: 100px;
 	/*top: 0; */
 	bottom: 0; 
-	left: -50px; 
-	right: 0;
+	/*left: -50px; 
+	right: 0;*/
 	margin: auto;
 	text-align: center;
 	perspective: 900px;  
@@ -116,18 +127,25 @@
 
 .active {
 	width: 600px;
-	margin: 0;
+	margin: 0 auto;
+	text-align: center;
 	transform: none;
+}
+
+.active:before {
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
 }
 
 .active ~ .cover {
 	transform: rotateY(-65deg);
-	height: 150px;
+	height: 100px;
 	width: 150px;
 	display: inline-block;
 	position: relative;
 	margin: 0 -60px; 
-	line-height: 150px;
 	cursor: pointer; 
 }
 
@@ -143,6 +161,7 @@ img.back {
 img.shirt {
 	width: 150px;
 	height: 100px;
+	left: 0;
 	top: -5px;
 	position: absolute;
 }
@@ -150,21 +169,18 @@ img.shirt {
 img.hanger {
 	width: 150px;
 	height: 100px;
+	left: 0;
 	top: -50px;
 	position: absolute;
 }
 
-.clearfix {
-	clear: both;
-}
-
 /* ------------------ DRAG&DROP --------------------------- */
 #bed {
-	width: 100%;
+	width: 972px;
 	height: 400px;
 	border: solid black;
 	float: left;
-	position: absolute;
+	position: relative;
 }
 
 #bin {
@@ -201,9 +217,34 @@ img.hanger {
 	/*background-color: red;*/
 }
 
+.board {
+	width: 966px;
+	height: 394px;
+	position: absolute;
+	z-index: 0;
+	background-size: cover;
+}
 
+.ui-draggable {
+	width: 150px;
+	height: 100px;
+}
 
+/* -------------------- BOTTOM ------------------------ */
+.buttons {
+	height: 50px;
+}
 
+#sidebar, .tips, .bloggers {
+	outline: solid red;
+	height:100px;
+	margin-bottom: 0;
+}
+
+.tips, .bloggers {
+	width:50%;
+	float:left;
+}
 
 
 /*#drag1, #drag2, #drag3, #drag4, #drag5 {
@@ -270,18 +311,3 @@ img.hanger {
 	border:1px solid red;
 }*/
 
-/* -------------------- BOTTOM ------------------------ */
-.bottums {
-	height: 50px;
-}
-
-#sidebar, .tips, .bloggers {
-	outline: solid red;
-	height:100px;
-	margin-bottom: 5%;
-}
-
-.tips, .bloggers {
-	width:50%;
-	float:left;
-}

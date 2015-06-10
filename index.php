@@ -32,8 +32,9 @@
 	</div><!-- #header -->
 	<h1>Outfitmaker</h1>
 
+	<img class='back' src="img/curtainrod.png"/>
+
 	<div id="clothes">
-		<img class='back' src="img/curtainrod.png"/>
 		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag1" class='shirt' src="img/byxor.png"></div>
 		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag2" class='shirt' src="img/shirt.png"></div>
 		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag3" class='shirt' src="img/shirt.png"></div>
@@ -44,7 +45,7 @@
 		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag8" class='shirt' src="img/shirt.png"></div>
 		<div class='cover'><img class='hanger' src="img/hanger.png"></br><img id="drag9" class='shirt' src="img/shirt.png"></div>
 	</div> <!-- end of options -->
-	
+
 	<div id="wrapper">
 		<div id="bed"></div>
 		<div id="bin"></div>
@@ -57,7 +58,7 @@
 			<option value="beach">Beach</option>
 		</select>
 		
-		<div class="bottums"></div>
+		<div class="buttons"></div>
 
 		<div id="sidebar">
 			<div class="tips"></div>

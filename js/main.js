@@ -3,7 +3,7 @@ var counter, pos, element;
 $(document).ready(function(){
     $('.cover').click(function() {
         $('.active').removeClass('active');
-        $(this).addClass("active");
+        $(this).addClass('active');
     });
     dragImg();
     chooseBackground();
