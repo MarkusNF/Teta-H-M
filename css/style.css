@@ -1,3 +1,10 @@
+h1 {
+	font-family: 'myriad-std-tilt', sans-serif;
+	font-size: 150px;
+	color: white;
+	text-align: center;
+}
+
 *, *:after, *:before {
 	margin: 0;
 	padding: 0;
@@ -8,13 +15,7 @@
 	clear: both;
 }
 /* ----------------------- HEADER -------------------------- */
-#header {
-	position: absolute;
-	height: 100px;
-	background-color: #fff;
-}
-
-#header, #bar {
+#bar {
 	width: 100%;
 	left: 0;
 	right: 0;
@@ -25,7 +26,7 @@
 	background-color: black;
 	height: 24px;
 	position: fixed;
-	z-index:10;
+	z-index: 10;
 }
 
 #bar ul {
@@ -46,7 +47,7 @@
 	line-height: 24px;
 }
 
-#menu {
+.menu {
 	/*position: absolute;*/
 	height: 38px;
 	width: 972px;
@@ -55,7 +56,7 @@
 	margin: 0 auto;
 }
 
-#menu a img {
+.menu a img {
 	width: 68px;
 	height: 45px;
 	position: relative;
@@ -64,12 +65,12 @@
 	float: left;
 }
 
-#menu ul, #bar ul {
+.menu ul, #bar ul {
 	text-transform: uppercase;
 	font-family: arial, sans-serif;
 }
 
-#menu ul {
+.menu ul {
 	width: 800px;
 	float: left;
 	margin-top: 50px;
@@ -77,11 +78,11 @@
 	text-align: center;
 }
 
-#menu ul li, #bar ul li {
+.menu ul li, #bar ul li {
 	list-style-type: none;
 }
 
-#menu ul li {
+.menu ul li {
 	color: #1a171b;
 	display: inline-block;
 	height: 38px;
@@ -91,13 +92,84 @@
 }
 
 /* -------------------- WRAPPER ------------------------ */
-#wrapper {
+.wrapper {
 	width: 972px;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+/* -------------------- FRONT PAGE ------------------------ */
+#banner {
+	width: 100%;
+	height: 200px;
+	background-color: #cd2026;
+	margin: 15px auto;
+}
+
+#banner img {
+	float: left;
+	width: 200px;
+	height: 100%;
+	vertical-align: middle;
+	margin-left: 100px;
+}
+
+.gender {
+	float: left;
+	width: 450px;
+	height: 502px;
+	margin: 20px 0 50px;
+	vertical-align: middle;
+	text-align: center;	
+}
+
+.female {
+	background: url(../img/hmfemale.jpg) no-repeat;
+	background-size: cover;
+}
+
+.male {
+	background: url(../img/hmmale.jpg) no-repeat;
+	background-size: cover;
+	margin-left: 70px;
+}
+
+.category ul {
+	list-style-type: none;
+	background: white;
+	width: 450px;
+	height: 100px;
+	position: absolute;
+	margin-top: 320px;
+	opacity: 0.7;
+}
+
+.category > ul {
+	width: 450px;
+	height: 100px;
+	position: absolute;
+}
+
+.category ul:nth-child(2) {
+	left: 754px;
+}
+
+.category ul li { 
+	font: bold 24px/45px Verdana, Sans-Serif; 
+	letter-spacing: -1px;  
+	margin: 30px 200px;
+	text-transform: uppercase;
+} 
+
+.category ul li a {
+	color: black;
+	text-decoration: none;
+}
+
+.category ul:hover {
+	opacity: 1;
+}
 /* -------------------- SLIDER ------------------------ */
 #clothes{
 	width: 972px;
@@ -133,20 +205,20 @@
 }
 
 .active:before {
-    content: ' ';
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
+	content: ' ';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
 }
 
 .active ~ .cover {
 	transform: rotateY(-65deg);
-	height: 100px;
+/*	height: 100px;
 	width: 150px;
 	display: inline-block;
 	position: relative;
 	margin: 0 -60px; 
-	cursor: pointer; 
+	cursor: pointer; */
 }
 
 img.back {
@@ -158,7 +230,7 @@ img.back {
 	/*position: absolute;*/
 }
 
-img.shirt {
+img.wp-post-image {
 	width: 150px;
 	height: 100px;
 	left: 0;
@@ -186,9 +258,9 @@ img.hanger {
 #bin {
 	background: url(../img/laundryBasket.png) no-repeat;
 	background-size: cover;
-	width: 250px;
-	height: 150px;
-	margin-top: 250px;
+	width: 150px;
+	height: 50px;
+	margin-top: 345px;
 	margin-left: 0px;
 	position: absolute;
 	z-index: 4;
@@ -228,6 +300,7 @@ img.hanger {
 .ui-draggable {
 	width: 150px;
 	height: 100px;
+	cursor: pointer;
 }
 
 /* -------------------- BOTTOM ------------------------ */
@@ -237,77 +310,11 @@ img.hanger {
 
 #sidebar, .tips, .bloggers {
 	outline: solid red;
-	height:100px;
-	margin-bottom: 0;
+	height: 100px;
+	margin-bottom: 10px;
 }
 
 .tips, .bloggers {
 	width:50%;
 	float:left;
 }
-
-
-/*#drag1, #drag2, #drag3, #drag4, #drag5 {
-	float:left;
-}
-
-#drag1, #drag2, #drag3, #drag4, #drag5, .dragged1, .dragged2, .dragged3, .dragged4, .dragged5 {
-	width:100px;
-	height:100px;
-	background-size: cover;
-}
-
-#drag1 {
-	background-image: url("../img/star.png");
-}
-
-#drag2 {
-	background-image: url("../img/minion1.png");
-}
-
-#drag3 {
-	background-image: url("../img/bowser.png");
-}
-
-#drag4 {
-	background-image: url("../img/svamp.png");
-}
-
-#drag5 {
-	background-image: url("../img/minion2.png");
-}
-
-
-*/
-
-
-/* classes for dragged stuff */
-/*.dragged1, .dragged2, .dragged3, .dragged4, .dragged5 {
-	position:absolute; 
-}*/
-
-/*.dragged1 {
-	background-image: url("../img/star.png");
-}
-
-.dragged2 {
-	background-image: url("../img/minion1.png");
-}
-
-.dragged3 {	
-	background-image: url("../img/bowser.png");
-}
-
-.dragged4 {
-	background-image: url("../img/svamp.png");
-}
-
-.dragged5 {
-	background-image: url("../img/minion2.png");
-}*/
-
-
-/*#element{
-	border:1px solid red;
-}*/
-
