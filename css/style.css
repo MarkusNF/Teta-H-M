@@ -174,11 +174,11 @@ body {
 */
 
 .category ul li:nth-child(2) {
-	left: 557px;
+	margin-left: 333px;
 }
 
 .category ul li:nth-child(3) {
-	left: 880px;
+	margin-left: 656px;
 }
 
 .category ul li { 
