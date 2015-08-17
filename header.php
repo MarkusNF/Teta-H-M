@@ -26,16 +26,17 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<script src="//use.typekit.net/trk2rie.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/normalize.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css" type="text/css" />
 </head>
 
 <body <?php body_class(); ?>>
-	<div id="bar">
+<!-- 	<div id="bar">
 		<ul>
 			<li>Kassa</li>
 			<li>Shoppingbag</li>
@@ -43,5 +44,5 @@
 			<li>Mitt H&M</li>
 			<li>Logga in</li>
 		</ul>
-	</div><!-- #bar -->
+	</div> --><!-- #bar -->
 	

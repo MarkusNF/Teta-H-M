@@ -1,8 +1,8 @@
 var $ = jQuery;
-var counter, pos, element, slug;
+var counter, pos, element, slug, posts;
 
 $(document).ready(function(){
-    //filteringCategories();    
+    filteringCategories();  
 
     $('.cover').on('click', function() {
         $('.active').removeClass('active');
@@ -14,30 +14,20 @@ $(document).ready(function(){
 
 });
 
-/*
-$(document).ready(function(){
- 
-        $.ajaxSetup({cache:false});
-        $(".post-link").click(function(){
-            var post_link = $(this).attr("href");
- 
-            $("#single-post-container").html("content loading");
-            $("#single-post-container").load(post_link);
-        return false;
-        });
- 
-    });
-*/
-
 function filteringCategories() {
-    $.ajaxSetup({cache:false});
     $('.menu ul li a').on('click', function() {
-        slug = $(this).attr('href');
-        console.log(slug);
+        itemName = $(this).attr('id');
+        console.log(itemName);
 
-        $('#clothes').html('content loading');
-        $('#clothes').load(slug);
-        return false;
+        $('#clothes div').each(function() {
+            if($(this).hasClass(itemName)) {
+                $(this).show();
+                //console.log($(this));
+            } else {
+                $(this).hide();
+            }
+        });
+
     });
 }
 
@@ -100,54 +90,3 @@ function dragImg(){
         }
     });
 }
-
-
-// function dragImg(){
-//     //Counter
-//     counter = 0;
-//     //Make element draggable
-//     $(".pic").draggable({
-//         helper:'clone',
-//         containment: '#bed',
-
-//         //When first dragged
-//         stop:function(ev, ui) {
-//         	var pos=$(ui.helper).offset();
-//         	objName = "#clonediv"+counter
-//         	$(objName).css({"left":pos.left,"top":pos.top});
-//         	$(objName).removeClass("pic");
-
-
-//            	//When an existiung object is dragged
-//             $(objName).draggable({
-//             	containment: 'parent',
-//                 stop:function(ev, ui) {
-//                 	var pos=$(ui.helper).offset();
-//                 	console.log($(this).attr("id"));
-// 					console.log(pos.left)
-//                     console.log(pos.top)
-//                 }
-//             });
-//         }
-//     });
-//     //Make element droppable
-//     $("#bed").droppable({
-// 		drop: function(ev, ui) {
-// 			if (ui.draggable.attr('id').search(/drag[0-9]/) != -1){
-// 				counter++;
-// 				var element=$(ui.draggable).clone();
-// 				element.addClass("tempclass");
-// 				$(this).append(element);
-// 				$(".tempclass").attr("id","clonediv"+counter);
-// 				$("#clonediv"+counter).removeClass("tempclass");
-
-// 				//Get the dynamically item id
-// 				draggedNumber = ui.draggable.attr('id').search(/drag([0-9])/)
-// 				itemDragged = "dragged" + RegExp.$1
-// 				console.log(itemDragged)
-
-// 				$("#clonediv"+counter).addClass(itemDragged);
-// 			}
-//     	}
-//     });
-// }

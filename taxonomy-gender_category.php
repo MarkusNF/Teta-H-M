@@ -2,8 +2,8 @@
 /**
 * The template for displaying taxonomy (categories) menu of CPT.
 *
-* @package Diana Castro
-* @subpackage Portfolio2015
+* @package Teta
+* @subpackage Outfitmaker
 * @since PACKAGE VERSION 1.0
 *
 */
@@ -38,9 +38,10 @@ $termchildren = get_term_children( $term_id, $taxonomy_name );
 		$i = 0;
 		while( have_posts() ) {
 			the_post();
-			//the_title();
+			$term_list = wp_get_post_terms( get_the_ID(), 'gender_category', array("fields" => 'all'));
+
 			?>
-			<div class="cover ">
+			<div class="cover <?php echo $term_list[1]->slug; ?>">
 				<img class='hanger' src="<?php echo get_template_directory_uri(); ?>/img/hanger.png"></br>
 				<?php
 				if( has_post_thumbnail() ) {

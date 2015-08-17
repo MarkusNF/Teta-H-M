@@ -30,8 +30,9 @@ get_header(); ?>
 	$args = array(
 		'orderby'			=> 'id', 
 		'order'				=> 'ASC',
-		'hide_empty'		=> true,
-		'include'			=> array(2, 3)
+		'hide_empty'		=> false,
+		'include'			=> array(6, 7)
+		//'include'			=> array(2, 3)
 	); 
 
 	$terms = get_terms($taxonomies, $args);
