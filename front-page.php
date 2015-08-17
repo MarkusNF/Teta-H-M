@@ -10,9 +10,7 @@
 */
 get_header(); ?>
 
-<div class="clearfix"></div>
-
-<div class="wrapper">
+<div class="wrapper front">
 	<div id="banner">
 		<!-- <a href="http://www.hm.com/se/" target="_blank"><img src="<?php //echo get_template_directory_uri(); ?>/img/hm_logo2.png" alt="HM logga"></a> -->
 		<h1><?php bloginfo('name') ?></h1>
