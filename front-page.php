@@ -10,55 +10,21 @@
 */
 get_header(); ?>
 
-<div class="wrapper front">
+
 	<div id="banner">
-		<!-- <a href="http://www.hm.com/se/" target="_blank"><img src="<?php //echo get_template_directory_uri(); ?>/img/hm_logo2.png" alt="HM logga"></a> -->
 		<h1><?php bloginfo('name') ?></h1>
+		<img id="logo" src="<?php echo get_template_directory_uri(); ?>/img/nyloves.png" alt="H&M logga"><br />
+		<img id="pride" src="<?php echo get_template_directory_uri(); ?>/img/pride.png" alt="Stockholm Pride">
 	</div><!-- #banner -->
 
-	<div id="loves">
-		
-	</div>
 
 	<div id="info">
-		<p>Beställ din outfit här, hämta den på din slutdestination</p>
+		<p>Beställ din outfit nu, hämta den på Stockholm Central idag!</p>
 	</div>
 
 	<div class="gender female"></div>
 	<div class="gender male"></div>
 	<div class="gender hen"></div>
-	<div class="category">
-
-		<?php
-		$taxonomies = array( 
-			'gender_category',
-		);
-
-		$args = array(
-			'orderby'			=> 'id', 
-			'order'				=> 'ASC',
-			'hide_empty'		=> false,
-			//'include'			=> array(6, 7, 17)
-			'include'			=> array(2, 3, 17)
-		); 
-
-		$terms = get_terms($taxonomies, $args);
-
-		?>
-		<ul>
-			<?php
-			foreach( $terms as $term ) {
-
-				// Get the term link
-				$term_link = get_term_link( $term );
-
-				echo '<li><a href="' . esc_url( $term_link ) . '">' . $term->name .'</a></li>';
-			}
-			?>
-		</ul>
-	</div><!-- .category -->
 </div><!-- .wrapper -->
-
-
 
 <?php get_footer(); ?>

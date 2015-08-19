@@ -70,6 +70,7 @@ add_action('init', 'gender_taxonomy', 0);
 * Enable support for Post Thumbnails on posts and pages.
 */
 add_theme_support( 'post-thumbnails' );
+add_image_size( 'clothes-thumb', 80 );
 
 /* ----------------------- SCRIPT ----------------------------- */
 

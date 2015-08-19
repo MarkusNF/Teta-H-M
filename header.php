@@ -36,13 +36,52 @@
 </head>
 
 <body <?php body_class(); ?>>
-<!-- 	<div id="bar">
-		<ul>
-			<li>Kassa</li>
-			<li>Shoppingbag</li>
-			<li>Sverige | SEK</li>
-			<li>Mitt H&M</li>
-			<li>Logga in</li>
+	<div class="wrapper front">
+
+
+	<?php
+	$taxonomies = array( 
+		'gender_category',
+	);
+
+	$args = array(
+		'orderby'			=> 'id', 
+		'order'				=> 'ASC',
+		'hide_empty'		=> false,
+		//'include'			=> array(6, 7, 17)
+		'include'			=> array(2, 3, 17)
+	); 
+
+	$terms = get_terms($taxonomies, $args);
+
+	if( is_front_page() ) {
+		?>
+		<div class="category">
+			<ul>
+				<?php
+				foreach( $terms as $term ) {
+
+					// Get the term link
+					$term_link = get_term_link( $term );
+
+					echo '<li><a href="' . esc_url( $term_link ) . '">' . $term->name .'</a></li>';
+				}
+				?>
+			</ul>
+		</div><!-- .category -->
+		<?php
+	} else if( is_tax() ) {
+		?>
+		<ul class="gender_menu">
+			<?php
+			foreach( $terms as $term ) {
+
+				// Get the term link
+				$term_link = get_term_link( $term );
+
+				echo '<li><a href="' . esc_url( $term_link ) . '">' . $term->name .'</a></li>';
+			}
+			?>
 		</ul>
-	</div> --><!-- #bar -->
-	
+		<?php
+	}

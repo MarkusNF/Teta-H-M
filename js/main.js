@@ -10,8 +10,6 @@ $(document).ready(function(){
     });
 
     dragImg();
-    chooseBackground();
-
 });
 
 function filteringCategories() {
@@ -31,15 +29,6 @@ function filteringCategories() {
     });
 }
 
-function chooseBackground() {
-    $('#background').change(function() {
-        var backgroundImage = $('#background').val();
-        $('select option:selected').each(function() {
-            $('#bed').html('<img class="board" src="http://localhost/dynweb/ourfitmakerWP/wp-content/themes/outfitmaker/img/' + backgroundImage + '.jpg"/><div class="bin"></div>');
-        });
-    }).trigger('change');
-}
-
 function dragImg(){
     //Counter
     counter = 0;
@@ -47,6 +36,13 @@ function dragImg(){
     $('.wp-post-image').draggable({
         helper:'clone',
         containment: '#bed',
+
+        // start: function(e, ui) {
+        //  ui.helper.animate({
+        //      width: 80,
+        //      height: 150
+        //  });
+        // },
 
         //When first dragged
         stop:function(ev, ui) {
@@ -86,7 +82,9 @@ function dragImg(){
     //Make element disapear
     $('#bin').droppable({
         drop: function(event, ui) {
+            console.log('bin');
             ui.draggable.remove();
+
         }
     });
 }
