@@ -69,6 +69,10 @@ $termchildren = get_term_children( $term_id, $taxonomy_name );
 		<div id="bed"></div>
 		<div id="bin"></div>
 
+		<div id="shoppingList">
+			<ul></ul>
+		</div>
+
 		<div class="clearfix"></div>
 		<div id="order">
 			<a href="https://www.hm.com/se/bag/login" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/hmButton.png" alt="Beställ"></a>

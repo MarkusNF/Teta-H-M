@@ -1,5 +1,9 @@
 var $ = jQuery;
-var counter, pos, element, slug, posts;
+var counter, pos, element, slug, posts, price, sum;
+var total_price = 0;
+var images_array = [];
+var current_position = 0;
+var numberOfSlides = 0;
 
 $(document).ready(function(){
     filteringCategories();  
@@ -9,7 +13,26 @@ $(document).ready(function(){
         $(this).addClass('active');
     });
 
+    // if( $('body').hasClass('tax-gender_category') ){
+    //  $('.cover .wp-post-image').each(function() {
+    //      var imgUrl = $(this).attr('src');
+    //      images_array.push(imgUrl);
+    //      console.log(images_array);
+    //  });
+    //  numberOfSlides = images_array.length-1;
+
+    //  $('.control_next').on('click', function() {
+    //      right();
+    //      console.log(current_position);
+    //  });
+
+    //  $('.control_prev').on('click', function() {
+    //      left();
+    //  });
+    // }
+
     dragImg();
+
 });
 
 function filteringCategories() {
@@ -29,20 +52,30 @@ function filteringCategories() {
     });
 }
 
+function left() {
+    if(current_position == 0) {
+        current_position = images_array.length - 1;
+    } else {
+        current_position--;
+    }
+}
+
+function right() {
+    if(current_position == images_array.length - 1) {
+        current_position = 0;
+    }
+    else {
+        current_position++;
+    }
+}
+
 function dragImg(){
     //Counter
     counter = 0;
     //Make element draggable
-    $('.wp-post-image').draggable({
+    $('.wp-post-image, .meta').draggable({
         helper:'clone',
         containment: '#bed',
-
-        // start: function(e, ui) {
-        //  ui.helper.animate({
-        //      width: 80,
-        //      height: 150
-        //  });
-        // },
 
         //When first dragged
         stop:function(ev, ui) {
@@ -76,6 +109,20 @@ function dragImg(){
                 itemDragged = 'dragged' + RegExp.$1
 
                 $("#clonediv"+counter).addClass(itemDragged);
+
+                //Här skrivs priset ut för varje plagg som dragits ner till rutan
+                price = ($('#bed #clonediv'+counter).attr('data-price'));
+                console.log(price);
+                $('#shoppingList ul').append('<li>Pris: '+price+'</li>');
+
+                //Härifrån har jag försökt att plussa priserna till totalen, men inte lyckats
+                var new_price = ($('#shoppingList').find('li').html());
+                console.log('ny pris li '+new_price);
+                new_price = new_price.replace('Pris: ', '');
+                console.log('int '+new_price);
+                
+                total_price += new_price;
+                console.log('total '+total_price);
             }
         }
     });
