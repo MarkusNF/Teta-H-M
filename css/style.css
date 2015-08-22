@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-/*	font-family: 'myriad-std-tilt', sans-serif;
+/*  font-family: 'myriad-std-tilt', sans-serif;
 	font-size: 150px;
 	color: white;
 	text-align: center;*/
@@ -76,7 +76,6 @@ h1 {
 	height: auto;
 	position: relative;
 	display: block;
-	margin-top: 40px;
 	float: left;
 }
 
@@ -86,11 +85,20 @@ h1 {
 	padding-top: 8px;
 }
 
-.gender_menu li {
-	float: left;	
+.gender_menu {
+	width: 200px;
+	margin: 0 auto;
+	top: 60px;
+	display: block;
+	position: relative;
+	z-index: 50;
 }
 
-.menu ul {
+.gender_menu ul li {
+	float: left;
+}
+
+.menu ul, .gender_menu ul {
 	text-transform: uppercase;
 	font-family: arial, sans-serif;
 }
@@ -98,15 +106,15 @@ h1 {
 .menu ul {
 	width: 700px;
 	float: left;
-	margin-top: 130px;
+	margin-top: 80px;
 	text-align: center;
 }
 
-.menu ul li {
+.menu ul li, .gender_menu ul li {
 	list-style-type: none;
 }
 
-.menu ul li {
+.menu ul li, .gender_menu ul li {
 	color: #1a171b;
 	display: inline-block;
 	height: 25px;
@@ -114,14 +122,18 @@ h1 {
 	font-weight: 700;
 }
 
-.menu ul li a {
+.menu ul li a, .gender_menu ul li a {
 	color: #000;
 	text-decoration: none;
 	font-size: 1.1em;
 	letter-spacing: 1px;
 }
 
-.menu ul li:hover {
+.menu ul li a:hover, .gender_menu ul li a:hover {
+	border-bottom: 1px solid black;
+}
+
+.gender_menu ul li a:active {
 	border-bottom: 1px solid black;
 }
 /* -------------------- WRAPPER ------------------------ */
@@ -183,29 +195,34 @@ h1 {
 	height: 502px;
 	margin: 20px 10px 50px;
 	vertical-align: middle;
-	text-align: center;	
+	text-align: center; 
 	background: white;
-	/*outline: 1px solid black;*/
 }
 
 .female {
-	background: url(../img/hmfemale.jpg) no-repeat;
+	background: url(../img/hon.jpg) no-repeat;
 	background-size: cover;
+	margin: 0 auto;
+	margin-left: 15px;
 }
 
 .male {
-	background: url(../img/hmmale.jpg) no-repeat;
+	background: url(../img/han.jpg) no-repeat;
 	background-size: cover;
+	margin: 0 auto;
+	margin-left: 15px;
 }
 
 .hen {
-	background: url(../img/hmmale.jpg) no-repeat;
+	background: url(../img/hen.jpg) no-repeat;
 	background-size: cover;
+	margin: 0 auto;
+	margin-left: 15px;
 }
 
 .category ul {
 	list-style-type: none;
-/*	width: 303px;
+/*  width: 303px;
 	height: 100px;*/
 	/*position: absolute;*/
 	/*margin-top: 320px;*/
@@ -223,16 +240,16 @@ h1 {
 }
 */
 
-.category ul li:first-child {
-	margin-left: 58px;
-}
+/*.category ul li:first-child {
+	margin-left: 50px;
+}*/
 
 .category ul li:nth-child(2) {
-	margin-left: 381px;
+	margin-left: 333px;
 }
 
 .category ul li:nth-child(3) {
-	margin-left: 704px;
+	margin-left: 651px;
 }
 
 .category ul li { 
@@ -240,14 +257,14 @@ h1 {
 	float: left; 
 	letter-spacing: -1px;  
 	margin-right: 10px;
-	margin-left: 10px;
+	margin-left: 15px;
 	background: white;
 	opacity: 0.7;
 	text-transform: uppercase;
 	width: 303px;
 	height: 100px;
 	position: absolute;
-	margin-top: 835px;
+	margin-top: 700px;
 	z-index: 10;
 } 
 
@@ -261,6 +278,59 @@ h1 {
 
 .category li:hover {
 	opacity: 1;
+}
+
+/* -------------------- SPEACH BUBBLE ------------------------ */
+#speech-bubble {
+	width: 160px; 
+	height: 100px; 
+	background: #4f4b66;
+	position: absolute;
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	border-radius: 10px;
+	padding: 10px;
+	top: 290px;
+	margin-left: 810px;
+}
+
+#speech-bubble:after {
+	content:"";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 26px solid #4f4b66;
+	border-bottom: 20px solid transparent;
+	margin: 13px 0 0 -35px;
+	z-index: 1;
+}
+
+#speech-bubble textarea {
+	position: inherit;
+	width: 150px;
+	height: 80px;
+	background: inherit;
+	color: #DBD6FF;
+	z-index: 2;
+	margin: 0;
+	padding: 1px;
+	padding-top: 10px;
+	border: none;
+	resize: none;
+}
+
+.fa-times {
+	position: inherit;
+	font-size: 2em;
+	color: black;
+	z-index: 10;
+	padding: 0;
+	margin-left: 132px;
+	top: 2px;
+	border: none;
+	resize: none;
+	cursor: pointer;
 }
 
 /* -------------------- SLIDER ------------------------ */
@@ -284,7 +354,7 @@ h1 {
 	display: inline-block;
 	position: relative;
 	margin: 0 -60px;  
-	transform: rotateY(65deg);  
+	transform: rotateY(50deg);  
 	transition: .8s;
 	line-height: 150px;
 	cursor: pointer;
@@ -305,8 +375,8 @@ h1 {
 }
 
 .active ~ .cover {
-	transform: rotateY(-65deg);
-/*	height: 100px;
+	transform: rotateY(-50deg);
+/*  height: 100px;
 	width: 150px;
 	display: inline-block;
 	position: relative;
@@ -320,7 +390,7 @@ img.back {
 	width: 100%;
 	left: 0;
 	right: 0;
-	margin-top: 20px;
+	margin-top: -25px;
 	/*position: absolute;*/
 }
 
@@ -328,17 +398,48 @@ img.wp-post-image {
 	width: 47px;
 	height: auto;
 	left: 0;
-	top: -5px;
+	top: -6px;
 	position: absolute;
 }
 
 img.hanger {
 	width: 47px;
-	height: 20px;
+	height: 35px;
 	left: 0;
-	top: -15px;
+	top: -21px;
 	position: absolute;
 }
+/*
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #2a2a2a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}*/
 
 /* ------------------ DRAG&DROP --------------------------- */
 #bed {
@@ -405,7 +506,7 @@ img.hanger {
 	margin-right: 180px;
 	width: 70px;
 	height: 25px;
-/*	font-family: arial, sans-serif;
+/*  font-family: arial, sans-serif;
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 11px;

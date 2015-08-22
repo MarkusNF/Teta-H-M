@@ -1,12 +1,16 @@
 var $ = jQuery;
-var counter, pos, element, slug, posts, price, sum;
+var counter, pos, element, slug, posts, cloneId, price, sum;
 var total_price = 0;
-var images_array = [];
-var current_position = 0;
-var numberOfSlides = 0;
 
 $(document).ready(function(){
     filteringCategories();  
+
+    $('.fa-times').on('click', function() {
+        $('#speech-bubble').hide();
+    });
+
+    //$('#speech-bubble').show();
+    //setTimeout(function() { $('#speech-bubble').hide(); }, 5000);
 
     $('.cover').on('click', function() {
         $('.active').removeClass('active');
@@ -110,7 +114,7 @@ function dragImg(){
 
                 $("#clonediv"+counter).addClass(itemDragged);
 
-                //Här skrivs priset ut för varje plagg som dragits ner till rutan och kopplas till plagget med samma id-class
+                //Här skrivs priset ut för varje plagg som dragits ner till rutan
                 price = ($('#bed #clonediv'+counter).attr('data-price'));
                 console.log(price);
                 cloneId = $('#clonediv'+counter).attr('id');
@@ -119,25 +123,24 @@ function dragImg(){
                 $('#shoppingList ul').append('<li class="'+cloneId+'">Pris: '+price+'</li>');
 
                 //Härifrån har jag försökt att plussa priserna till totalen, men inte lyckats
-                var new_price = ($('#shoppingList').find('li').html());
-                console.log('ny pris li '+new_price);
-                new_price = new_price.replace('Pris: ', '');
-                console.log('int '+new_price);
+                // var new_price = ($('#shoppingList').find('li').html());
+                // console.log('ny pris li '+new_price);
+                // new_price = new_price.replace('Pris: ', '');
+                // console.log('int '+new_price);
                 
-                total_price += new_price;
-                console.log('total '+total_price);
+                // total_price += new_price;
+                // console.log('total '+total_price);
             }
         }
     });
     //Make element disapear
     $('#bin').droppable({
         drop: function(event, ui) {
-            //Försöker koppla id från plagget till classen på prislistan för att ta bort priset när plagget slängs
             item = $(ui.draggable).attr('id');
             console.log(item);
             $('#shoppingList ul li').each(function() {
                 if( $('#shoppingList ul li').hasClass(item) ){
-                    $(this).hide();
+                    $('#shoppingList ul .'+item).remove();
                 } 
             });
             console.log('bin');
