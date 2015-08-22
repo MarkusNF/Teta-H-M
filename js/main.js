@@ -110,10 +110,13 @@ function dragImg(){
 
                 $("#clonediv"+counter).addClass(itemDragged);
 
-                //Här skrivs priset ut för varje plagg som dragits ner till rutan
+                //Här skrivs priset ut för varje plagg som dragits ner till rutan och kopplas till plagget med samma id-class
                 price = ($('#bed #clonediv'+counter).attr('data-price'));
                 console.log(price);
-                $('#shoppingList ul').append('<li>Pris: '+price+'</li>');
+                cloneId = $('#clonediv'+counter).attr('id');
+                console.log('cloneid '+cloneId);
+
+                $('#shoppingList ul').append('<li class="'+cloneId+'">Pris: '+price+'</li>');
 
                 //Härifrån har jag försökt att plussa priserna till totalen, men inte lyckats
                 var new_price = ($('#shoppingList').find('li').html());
@@ -129,6 +132,14 @@ function dragImg(){
     //Make element disapear
     $('#bin').droppable({
         drop: function(event, ui) {
+            //Försöker koppla id från plagget till classen på prislistan för att ta bort priset när plagget slängs
+            item = $(ui.draggable).attr('id');
+            console.log(item);
+            $('#shoppingList ul li').each(function() {
+                if( $('#shoppingList ul li').hasClass(item) ){
+                    $(this).hide();
+                } 
+            });
             console.log('bin');
             ui.draggable.remove();
 
