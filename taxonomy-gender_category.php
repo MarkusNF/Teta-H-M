@@ -35,8 +35,7 @@ $termchildren = get_term_children( $term_id, $taxonomy_name );
 	</div>
 
 	<div id="speech-bubble">
-		<textarea>Dra plagget hit för att skapa din outfit</textarea>
-		<i class="fa fa-times"></i>
+		<p>Dra plagget hit </br>för att skapa din outfit</p>
 	</div>
 
 	<img class='back' src="<?php echo get_template_directory_uri(); ?>/img/curtainrod.png"/>

@@ -282,65 +282,18 @@ h1 {
 
 /* -------------------- SPEECH BUBBLE ------------------------ */
 #speech-bubble {
-	width: 160px; 
-	height: 100px; 
-	/*background: #4f4b66;*/
+	width: 400px; 
+	height: 200px; 
 	position: absolute;
-	-moz-border-radius: 10px; 
-	-webkit-border-radius: 10px; 
-	border-radius: 10px;
-	padding: 10px;
-	top: 500px;
-	/*margin-left: 810px;*/
-	margin-left: 400px;
+	text-align: center;
+	top: 600px;
+	margin-left:270px;
 }
 
-#speech-bubble:after {
-/*	content:"";
-	position: absolute;
-	width: 0;
-	height: 0;
-	border-top: 25px solid transparent;
-	border-right: 26px solid #4f4b66;
-	border-bottom: 20px solid transparent;
-	margin: 13px 0 0 -35px;
-	z-index: 1;*/
-/*	content:"";
-	position: absolute;
-	width: 0;
-	height: 0;
-	border-top: 20px solid transparent;
-	border-left: 50px solid #4f4b66; 
-	border-bottom: 40px solid transparent;
-	margin: 0 0 0 130px;
-	z-index: 1;*/
-}
-
-#speech-bubble textarea {
-	position: inherit;
-	width: 150px;
-	height: 80px;
-	background: inherit;
+#speech-bubble p {
 	color: #B2B2B2;
-	z-index: 2;
-	margin: 0;
-	padding: 1px;
-	padding-top: 10px;
-	border: none;
-	resize: none;
-}
-
-.fa-times {
-	position: inherit;
 	font-size: 2em;
-	color: black;
-	z-index: 10;
-	padding: 0;
-	margin-left: 132px;
-	top: 2px;
-	border: none;
-	resize: none;
-	cursor: pointer;
+	text-align: center;
 }
 
 /* -------------------- SLIDER ------------------------ */
