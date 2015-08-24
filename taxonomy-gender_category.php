@@ -35,7 +35,7 @@ $termchildren = get_term_children( $term_id, $taxonomy_name );
 	</div>
 
 	<div id="speech-bubble">
-		<textarea>Välj ditt plagg och dra ner det till rutan för att skapa din outfit</textarea>
+		<textarea>Dra plagget hit för att skapa din outfit</textarea>
 		<i class="fa fa-times"></i>
 	</div>
 
