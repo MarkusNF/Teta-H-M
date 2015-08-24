@@ -47,8 +47,7 @@
 		'orderby'			=> 'id', 
 		'order'				=> 'ASC',
 		'hide_empty'		=> false,
-		//'include'			=> array(6, 7, 17)
-		'include'			=> array(2, 3, 17)
+		'parent'			=> '0'
 	); 
 
 	$terms = get_terms($taxonomies, $args);
