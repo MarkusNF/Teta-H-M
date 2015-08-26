@@ -1,15 +1,4 @@
 <?php
-/* ------------------------- MENU --------------------------- */
-
-/**
-* Uses wp_nav_menu in header.
-*/
-register_nav_menus(array(
-	'home' 		=> __('Home Meny'),
-	'dam'		=> __('Dam Meny'),
-	'herr'		=> __('Herr Meny')
-));
-
 /* ------------------- CUSTOM POST TYPE ----------------------- */
 /**
 * Setup for Custom Post Type.
@@ -112,3 +101,48 @@ function my_scripts_method() {
 	wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/js/main.js', array( 'jquery', 'jquery_ui' ));
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+
+/*******************************/
+// function load_ajax() {
+// 	wp_enqueue_script( 'ajax-pagination',  get_stylesheet_directory_uri() . '/js/ajax-pagination.js', array( 'jquery' ), '1.0', true );
+// 	global $wp_query;
+// 	wp_localize_script( 'ajax-pagination', 'ajaxpagination', array(
+// 	'ajaxurl' => admin_url( 'admin-ajax.php' ),
+// 	'query_vars' => json_encode( $wp_query->query )
+// 	));
+// }
+// add_action( 'wp_enqueue_scripts', 'load_ajax' );
+
+// function my_ajax_pagination() {
+//     $query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
+
+//     $query_vars['paged'] = $_POST['page'];
+
+
+//     $posts = new WP_Query( $query_vars );
+//     $GLOBALS['wp_query'] = $posts;
+
+//     add_filter( 'editor_max_image_size', 'my_image_size_override' );
+
+//För att skriva ut det här skapade jag en content.php där jag lade allt innanför while-loopen, men det funkade ändå inte så jag gav upp.
+//     while ( $posts->have_posts() ) { 
+//         $posts->the_post();
+//         get_template_part( 'content' );
+//     }
+
+//     remove_filter( 'editor_max_image_size', 'my_image_size_override' );
+
+//     the_posts_pagination( array(
+//         'prev_text'          => __( 'Previous page', 'outfitmaker' ),
+//         'next_text'          => __( 'Next page', 'outfitmaker' ),
+//         'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'outfitmaker' ) . ' </span>',
+//     ) );
+
+//     die();
+// }
+// add_action( 'wp_ajax_nopriv_ajax_pagination', 'my_ajax_pagination' );
+// add_action( 'wp_ajax_ajax_pagination', 'my_ajax_pagination' );
+
+// function my_image_size_override() {
+//     return array( 825, 510 );
+// }

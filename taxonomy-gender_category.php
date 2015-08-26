@@ -69,6 +69,12 @@ $termchildren = get_term_children( $term_id, $taxonomy_name );
 				</div><!-- .cover -->
 				<?php
 			}
+			//Paginering med WP
+			// the_posts_pagination( array(
+			// 	'prev_text'          => __( 'Föregående', 'outfitmaker' ),
+			// 	'next_text'          => __( 'Nästa', 'outfitmaker' ),
+			// 	'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'outfitmaker' ) . ' </span>',
+			// ) );
 		}
 		?>
 		<!-- <a href="#" class="control_prev"><</a> -->

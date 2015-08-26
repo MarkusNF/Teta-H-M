@@ -5,9 +5,19 @@ var total_price = 0;
 $(document).ready(function(){
     filteringCategories();  
 
-    $('.fa-times').on('click', function() {
-        $('#speech-bubble').hide();
-    });
+    //Här är den korta koden
+    
+    // $('#clothes').on('click', '.nav-links a', function(e) {
+    //  e.preventDefault();
+    //  console.log('clicked link');
+
+    //  var link = $(this).attr('href');
+    //  $('#clothes').fadeOut(300, function() {
+    //      $(this).load(link + ' #clothes', function() {
+    //          $(this).fadeIn(300);
+    //      });
+    //  });
+    // });
 
     //$('#speech-bubble').show();
     //setTimeout(function() { $('#speech-bubble').hide(); }, 5000);
