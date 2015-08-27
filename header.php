@@ -25,20 +25,23 @@
 	<title><?php bloginfo('name'); ?> | <?php wp_title( '|', true, 'left' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<!-- <script src="//use.typekit.net/trk2rie.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/normalize.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="wrapper front">
-
-
 	<?php
+
+	// Get taxonomy
 	$taxonomies = array( 
 		'gender_category',
 	);
@@ -54,32 +57,37 @@
 
 	if( is_front_page() ) {
 		?>
-		<div class="category">
-			<ul>
-				<?php
-				foreach( $terms as $term ) {
+		<div class="wrapper front">
+			<div class="category">
+				<ul>
+					<?php
+					foreach( $terms as $term ) {
 
-					// Get the term link
-					$term_link = get_term_link( $term );
+						// Get the term link
+						$term_link = get_term_link( $term );
 
-					echo '<li><a href="' . esc_url( $term_link ) . '">' . $term->name .'</a></li>';
-				}
-				?>
-			</ul>
-		</div><!-- .category -->
-		<?php
-	} else if( is_tax() ) {
-		?>
-		<ul class="gender_menu">
+						echo '<li><a href="' . esc_url( $term_link ) . '">' . $term->name .'</a></li>';
+					}
+					?>
+				</ul>
+			</div><!-- .category -->
 			<?php
-			foreach( $terms as $term ) {
-
-				// Get the term link
-				$term_link = get_term_link( $term );
-
-				echo '<li><a href="' . esc_url( $term_link ) . '">' . $term->name .'</a></li>';
-			}
+	} else if( is_tax() ) {
 			?>
-		</ul>
+			<div class="wrapper mix">
+				<div class="gender_menu">
+					<ul>
+						<?php
+						foreach( $terms as $term ) {
+
+							// Get the term link
+							$term_link = get_term_link( $term );
+
+							echo '<li><a href="' . esc_url( $term_link ) . '">' . $term->name .'</a></li>';
+						}
+						?>
+					</ul>
+				</div><!-- .gender_menu -->
+				<div class="clearfix"></div>
 		<?php
 	}

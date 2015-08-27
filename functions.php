@@ -56,7 +56,7 @@ add_action('init', 'gender_taxonomy', 0);
 /* ----------------------- IMAGES ---------------------------- */
 
 /**
-* Enable support for Post Thumbnails on posts and pages.
+* Enable support for Post Thumbnails on CPT.
 */
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'clothes-thumb', 80 );
@@ -89,7 +89,7 @@ add_action( 'init', 'modify_jquery' );
 *
 */
 function my_scripts_jquery_ui() {
-    wp_enqueue_script( 'jquery_ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js', array( 'jquery' ), '1.11.4');
+	wp_enqueue_script( 'jquery_ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js', array( 'jquery' ), '1.11.4');
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_jquery_ui' );
 
@@ -101,6 +101,7 @@ function my_scripts_method() {
 	wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/js/main.js', array( 'jquery', 'jquery_ui' ));
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+
 
 /*******************************/
 // function load_ajax() {
@@ -124,7 +125,7 @@ add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
 //     add_filter( 'editor_max_image_size', 'my_image_size_override' );
 
-//För att skriva ut det här skapade jag en content.php där jag lade allt innanför while-loopen, men det funkade ändå inte så jag gav upp.
+ 
 //     while ( $posts->have_posts() ) { 
 //         $posts->the_post();
 //         get_template_part( 'content' );

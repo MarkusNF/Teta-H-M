@@ -19,12 +19,12 @@ get_header(); ?>
 
 
 	<div id="info">
-		<p>Beställ din outfit nu, hämta den på Stockholm Central idag!</p>
-	</div>
+		<p>Beställ din outfit ombord på tåget, hämta den på Stockholm Central vid ankomst!<br>Effektiv shopping som ger mer tid för fest.<span> happy pride!</span></p>
+	</div><!-- #banner -->
 
 	<div class="gender female"></div>
 	<div class="gender male"></div>
 	<div class="gender hen"></div>
-</div><!-- .wrapper -->
+</div><!-- .wrapper front -->
 
 <?php get_footer(); ?>

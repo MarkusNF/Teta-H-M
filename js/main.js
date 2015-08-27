@@ -1,12 +1,9 @@
 var $ = jQuery;
-var counter, pos, element, slug, posts, cloneId, price, sum;
-var total_price = 0;
+var counter, pos, element, cloneId, price;
 
 $(document).ready(function(){
     filteringCategories();  
 
-    //Här är den korta koden
-    
     // $('#clothes').on('click', '.nav-links a', function(e) {
     //  e.preventDefault();
     //  console.log('clicked link');
@@ -19,36 +16,18 @@ $(document).ready(function(){
     //  });
     // });
 
-    //$('#speech-bubble').show();
-    //setTimeout(function() { $('#speech-bubble').hide(); }, 5000);
-
+    // Functionality of slider
     $('.cover').on('click', function() {
         $('.active').removeClass('active');
         $(this).addClass('active');
     });
 
-    // if( $('body').hasClass('tax-gender_category') ){
-    //  $('.cover .wp-post-image').each(function() {
-    //      var imgUrl = $(this).attr('src');
-    //      images_array.push(imgUrl);
-    //      console.log(images_array);
-    //  });
-    //  numberOfSlides = images_array.length-1;
-
-    //  $('.control_next').on('click', function() {
-    //      right();
-    //      console.log(current_position);
-    //  });
-
-    //  $('.control_prev').on('click', function() {
-    //      left();
-    //  });
-    // }
-
     dragImg();
-
 });
 
+/**
+* Function that shows the posts that belongs to the link clicked and hide the rest
+*/
 function filteringCategories() {
     $('.menu ul li a').on('click', function() {
         itemName = $(this).attr('id');
@@ -62,32 +41,22 @@ function filteringCategories() {
                 $(this).hide();
             }
         });
-
     });
 }
 
-function left() {
-    if(current_position == 0) {
-        current_position = images_array.length - 1;
-    } else {
-        current_position--;
-    }
-}
-
-function right() {
-    if(current_position == images_array.length - 1) {
-        current_position = 0;
-    }
-    else {
-        current_position++;
-    }
-}
-
+/**
+* Function of Drag&Drop 
+* Makes post-thumbnail draggable and makes a clone of it
+* The clone is then droppable in content #bed
+* Gets the clones price stored in attr data-price and makes a li with same id of clone
+* Shows .details img that stores colors/sizes when clone is clicked
+* Makes the clone and price from li disapear when dropped in #bin
+*/
 function dragImg(){
     //Counter
     counter = 0;
     //Make element draggable
-    $('.wp-post-image, .meta').draggable({
+    $('.wp-post-image').draggable({
         helper:'clone',
         containment: '#bed',
 
@@ -97,15 +66,16 @@ function dragImg(){
             objName = '#clonediv'+counter;
             $(objName).removeClass('wp-post-image');
 
-            //When an existiung object is dragged
+            //When an existing object is dragged
             $(objName).draggable({
                 containment: 'parent',
-                stop:function(ev, ui) {
-                    var pos=$(ui.helper).offset();
+                stop: function(ev, ui) {
+                    var pos = $(ui.helper).offset();
                 }
             });
         }
     }).css('position','absolute');
+
     //Make element droppable
     $('#bed').droppable({
         drop: function(ev, ui) {
@@ -123,39 +93,48 @@ function dragImg(){
                 itemDragged = 'dragged' + RegExp.$1
 
                 $("#clonediv"+counter).addClass(itemDragged);
+                removeText();               
 
-                //Här skrivs priset ut för varje plagg som dragits ner till rutan
+                // Store the price of the clone item and the clones id in variables and appends it in #ShoppingList li
                 price = ($('#bed #clonediv'+counter).attr('data-price'));
-                console.log(price);
                 cloneId = $('#clonediv'+counter).attr('id');
-                console.log('cloneid '+cloneId);
+                $('#shoppingList ul').append('<li class="'+cloneId+'">Pris: '+price+':-</li>');
 
-                $('#shoppingList ul').append('<li class="'+cloneId+'">Pris: '+price+'</li>');
-
-                //Härifrån har jag försökt att plussa priserna till totalen, men inte lyckats
-                // var new_price = ($('#shoppingList').find('li').html());
-                // console.log('ny pris li '+new_price);
-                // new_price = new_price.replace('Pris: ', '');
-                // console.log('int '+new_price);
-                
-                // total_price += new_price;
-                // console.log('total '+total_price);
+                // Shows popup with details
+                $('#bed img').on('click', function() {
+                    $('.details').fadeIn(500);
+                });
+                unloadDetails();
             }
         }
     });
-    //Make element disapear
+    //Make element and price disapear
     $('#bin').droppable({
         drop: function(event, ui) {
             item = $(ui.draggable).attr('id');
-            console.log(item);
+            //console.log(item);
             $('#shoppingList ul li').each(function() {
                 if( $('#shoppingList ul li').hasClass(item) ){
                     $('#shoppingList ul .'+item).remove();
                 } 
             });
-            console.log('bin');
+            unloadDetails();
+            //console.log('bin');
             ui.draggable.remove();
-
         }
     });
+}
+
+/**
+* Function to make details disapear
+*/
+function unloadDetails() {
+    $('.details').fadeOut(500);
+}
+
+/**
+* Function to make details disapear
+*/
+function removeText() {
+    $('#bed p').fadeOut('fast');
 }

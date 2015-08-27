@@ -610,10 +610,9 @@ a.control_next {
 	height: 600px;  
 	width: 1100px;  
 	background: #FFFFFF;  
-	left: 150px;
+	left: 100px;
 	top: 100px;
-	z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
-	margin-left: 15px;  
+	z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */ 
 	
 	/* additional features, can be omitted */
 	/*border:2px solid #ff0000;  */    
